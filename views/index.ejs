@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blumgi Merge Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #4CAF50;
+        }
+        .section p {
+            line-height: 1.6;
+        }
+        .section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .section ul li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+        .game-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .game-screen {
+            width: 100%;
+            height: 450px;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            text-align: center;
+        }
+        .fullscreen-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .fullscreen-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="game-container">
+            <iframe src="https://abinbins.github.io/a2/blumgi-ball/" width="100%" height="450px" frameborder="0" allowfullscreen></iframe>
+            <button class="fullscreen-btn" onclick="toggleFullScreen()">Full Screen</button>
+        </div>
+
+        <h1>Blumgi Merge Game</h1>
+
+        <div class="section">
+            <h2>Game Introduction</h2>
+            <p>Welcome to the magical world of Blumgi Merge, where every slime is more than just a squishy blob — it's a true warrior! Merge identical slimes to create stronger, cooler-looking heroes with brand new powers and weapons. Every fusion brings you closer to building an unstoppable army capable of defeating wave after wave of dungeon-dwelling monsters.</p>
+        </div>
+
+        <div class="section">
+            <h2>Gameplay</h2>
+            <ul>
+                <li>Use the mouse or tap to buy, merge and fight with your slimes.</li>
+                <li>Defeat monsters to earn coins, which can be used to summon more slimes.</li>
+                <li>Keep merging, fighting, and upgrading to conquer tougher enemies and see if you have what it takes to beat the dungeon.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Levels</h2>
+            <p>Blumgi Merge features an exciting progression through 13 unique levels with distinct challenges and environments. As you advance, you encounter increasingly formidable monsters and intricate traps that require strategic thinking and quick reflexes. Each level introduces new slime types and powers, encouraging you to adapt your merging strategies.</p>
+        </div>
+
+        <div class="section">
+            <h2>User Rating</h2>
+            <p>Blumgi Merge has a user rating of 5.0 out of 5 based on 1 vote.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleFullScreen() {
+            const gameContainer = document.querySelector('.game-container');
+            if (!document.fullscreenElement) {
+                gameContainer.requestFullscreen().catch(err => {
+                    console.error(`Unable to enter fullscreen: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen().catch(err => {
+                    console.error(`Unable to exit fullscreen: ${err.message}`);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
